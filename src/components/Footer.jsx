@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Footer = () => {
-  return (
-    <div>
-      Footer
-    </div>
+  return(
+    <div>Footer</div>
   )
 }
 
