@@ -1,61 +1,57 @@
 import React, { useState } from 'react'
-const headerNav =[
-{
-  title: "intro",
-  url: "#intro"
-},
-{
-  title: "skill",
-  url: "#skill"
-},
-{
-  title: "site",
-  url: "#site"
-},
-{
-  title: "portfolio",
-  url: "#port"
-},
-{
-  title: "contact",
-  url: "#contact"
-},
-{
-  title: "감자",
-  url: "#수 "
-},
-]
 
+const headerNav = [
+  {
+    title : "intro",
+    url : "#intro",
+  },
+  {
+    title : "skill",
+    url : "#skill",
+  },
+  {
+    title : "site",
+    url : "#site",
+  },
+  {
+    title : "Portfolio",
+    url : "#port",
+  },
+  {
+    title : "contact",
+    url : "#contact",
+  },
+]
 
 const Header = () => {
 
-const [show,setShow]=useState(false);
+const [show,setShow] =useState(false);
 const toggleMenu = ()=>{
-  setShow(pShow => !pShow);
+  setShow((prevShow)=> ! prevShow)
 }
 
   return (
     <header id='header'>
       <div className="header_inner">
         <div className="header_logo">
-          <a href="/">portfolio <em>jj</em></a>
+          <a href="/">Portfolio <em>react</em></a>
         </div>
-        <div className={`header_nav ${show ? "show": ""}`} role='navigation' aria-label='메인메뉴'>
+        <nav className={`header_nav ${show ? "show":""}`} aria-label='메인메뉴'>
           <ul>
             {headerNav.map((nav,key)=>(
-              <li key={key}><a href={nav.url}>{nav.title}</a></li> 
-            ))}
-            {/* <li><a href="#intro">intro</a></li> */}
+               <li key={key}><a href={nav.url}>{nav.title}</a></li>
+            ))};
+         
           </ul>
-        </div>
+        </nav>
         <div className="header_nav_mobile"
-          id='headerToggle'
-          aria-controls='primary-menu'
-          aria-expanded ={show ? "true":"flase"}
-          role='button'
-          tabIndex="0"
-          onClick={toggleMenu}
-        >
+        id='headerToggle'
+        aria-controls='primary-menu'
+        aria-aria-expanded ={show ? "true":"false"}
+        role='button'
+        tabIndex= "0"
+        onClick={toggleMenu}
+>
           <span></span>
         </div>
       </div>
